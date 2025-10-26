@@ -1,0 +1,40 @@
+# Rust Edition Configuration
+edition = "2024"
+style_edition = "2024"
+
+# Line Width and Indentation
+max_width = 120
+hard_tabs = false
+tab_spaces = 4
+
+# Newline Style
+newline_style = "Unix"
+
+# Import Organization
+# Controls how imports are sorted and grouped
+reorder_imports = true
+group_imports = "StdExternalCrate"    # Groups: std, external crates, then local
+imports_granularity = "Module"        # Merges imports from the same module
+imports_layout = "HorizontalVertical" # Horizontal if it fits, otherwise vertical
+
+# Code Organization
+# Automatically reorder modules and impl items for consistency
+reorder_modules = true
+reorder_impl_items = true
+
+# Comment Formatting
+# Ensures comments are properly formatted and normalized
+wrap_comments = true
+comment_width = 120
+normalize_comments = true
+normalize_doc_attributes = true
+doc_comment_code_block_width = 100
+format_code_in_doc_comments = true
+
+# String and Macro Formatting
+format_strings = true
+format_macro_bodies = true
+
+# Heuristics
+# Controls how aggressively rustfmt tries to fit code on fewer lines
+use_small_heuristics = "Max"

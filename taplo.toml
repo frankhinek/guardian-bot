@@ -1,0 +1,23 @@
+# Taplo Configuration
+# Taplo is a TOML formatter and linter that ensures consistent TOML file formatting
+
+# Exclude patterns
+# These directories will be ignored by taplo when formatting/linting
+exclude = ["**/target/**", "**/.direnv/**"]
+
+# Default Formatting Rules
+# Applied to all TOML files unless overridden by specific rules
+[formatting]
+# Keep keys in their original order for most TOML files
+# This preserves intentional ordering (e.g., in config files)
+reorder_keys = false
+
+# Cargo.toml Specific Rules
+# Cargo.toml files benefit from alphabetically sorted keys for consistency
+[[rule]]
+include = ["**/Cargo.toml"]
+
+[rule.formatting]
+# Alphabetically sort keys in Cargo.toml files
+# This makes it easier to find dependencies and avoid duplicates
+reorder_keys = true
