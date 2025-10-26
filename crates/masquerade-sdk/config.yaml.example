@@ -1,0 +1,15 @@
+homeserver:
+    server_name: example.org
+    url: https://matrix.example.org
+appservice:
+    url: https://appservice.example.org # Appservice URL reachable by homeserver. Only used for generating the registration file.
+    bind_ip: 0.0.0.0
+    port: 24177
+    id: my_appservice           # Appservice id. Same as id in registration file.
+    username: my_appservice     # Bot username. Same as sender_localpart in registration file.
+    displayname: "My Appservice"
+    as_token:       # Appservice token goes here. Same as in registration file.
+    hs_token:       # Homeserver token goes here. Same as in registration file.
+database:
+    path: /data/    # Folder to store sqlite databases that store crypto state.
+    passphrase:     # Passphrase for sqlite databases.
