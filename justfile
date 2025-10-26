@@ -5,6 +5,10 @@
 default:
     @just --list
 
+# Run both format and lint checks
+check-all: format-check lint
+    @echo "✓ All checks complete"
+
 # Format all code in the workspace
 format:
     @echo "Formatting TOML files..."
@@ -29,6 +33,8 @@ lint:
     cargo clippy --all-targets --all-features -- -D warnings
     @echo "✓ Clippy checks complete"
 
-# Run both format and lint checks
-check-all: format-check lint
-    @echo "✓ All checks complete"
+# Run all tests in the workspace
+test:
+    @echo "Running tests..."
+    cargo test --all-features --workspace
+    @echo "✓ All tests complete"
